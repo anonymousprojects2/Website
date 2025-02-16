@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ATTENDMAX</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="/static/images/logo.png" alt="ATTENDMAX Logo" id="logo">
+                <span class="brand-name">ATTENDMAX</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/admin/dashboard" class="active">Dashboard</a></li>
+                <li><a href="/admin/attendance">Attendance Records</a></li>
+                <li><a href="/logout" class="login-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <p class="welcome-text">Welcome back, <span id="adminName">Admin</span></p>
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <p class="stat-number" id="totalStudents">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Today's Attendance</h3>
+                    <p class="stat-number" id="todayAttendance">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Sessions</h3>
+                    <p class="stat-number" id="activeSessions">0</p>
+                </div>
+            </div>
+
+            <div class="dashboard-sections">
+                <section class="qr-generator">
+                    <h2>QR Code Generator</h2>
+                    <div class="qr-controls">
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" required>
+                                <option value="AIDS">AIDS</option>
+                                <option value="CSE">CSE</option>
+                                <option value="CY">CY</option>
+                                <option value="AIML">AIML</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <select id="year" required>
+                                <option value="FY">First Year</option>
+                                <option value="SY">Second Year</option>
+                                <option value="TY">Third Year</option>
+                                <option value="Final">Final Year</option>
+                            </select>
+                        </div>
+                        <button id="generateQR" class="primary-btn">Generate QR Code</button>
+                    </div>
+                    <div id="qrDisplay" class="qr-display">
+                        <img id="qrCode" alt="QR Code" class="hidden">
+                        <p id="qrTimer" class="qr-timer"></p>
+                    </div>
+                </section>
+
+                <section class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="activityList">
+                        <!-- Activity items will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ATTENDMAX. All rights reserved.</p>
+            <p>Powered by cutting-edge QR technology</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/admin-dashboard.js"></script>
+</body>
+</html>
